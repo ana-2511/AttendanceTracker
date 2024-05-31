@@ -7,7 +7,7 @@ st.markdown(
     """
     <style>
     .main {
-        background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.uppergordonriverimprovement.com%2F24%2F%3Fg%3Dstudent-attendance-system-college-attendance-system-nn-w79O9qiZ&psig=AOvVaw0jEDB-ku3hzpvHqy711YYd&ust=1717275633748000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLjhrI7quIYDFQAAAAAdAAAAABA9');
+        background-image: url('https://wpschoolpress.com/wp-content/uploads/2023/05/Attendance-Management-System.png');
         background-size: cover;
         padding: 20px;
     }
