@@ -29,6 +29,9 @@ st.markdown(
     p, label {
         color: purple;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-weight: bold;
+        font-size: 20px;
+
     }
     </style>
     """, unsafe_allow_html=True
