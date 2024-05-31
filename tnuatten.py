@@ -7,7 +7,7 @@ st.markdown(
     """
     <style>
     .main {
-        background-image: url('OIG1.jpg');
+        background-image: url('https://www.timechecksoftware.com/wp-content/uploads/2021/09/attendance-tracking-and-managing-software.jpg');
         background-size: cover;
         padding: 20px;
     }
