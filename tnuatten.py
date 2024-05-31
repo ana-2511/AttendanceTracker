@@ -7,7 +7,7 @@ st.markdown(
     """
     <style>
     .main {
-        background-image: url('https://blog.darwinbox.com/hubfs/The%20Importance%20of%20an%20Attendance%20System%20Dashboard-%20Simplifying%20HR%20Management.jpg');
+        background-image: url('https://blog.allgeo.com/wp-content/uploads/2023/08/unnamed-9-scaled-1-1280x750.jpeg');
         background-size: cover;
         padding: 20px;
     }
@@ -27,7 +27,7 @@ st.markdown(
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
     p, label {
-        color: purple;
+        color: white;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         font-weight: bold;
         font-size: 20px;
