@@ -29,7 +29,7 @@ st.markdown(
     p, label {
         color: purple;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        font-weight: italics;
+        font-weight: bold;
         font-size: 20px;
 
     }
