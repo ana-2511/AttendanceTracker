@@ -7,7 +7,7 @@ st.markdown(
     """
     <style>
     .main {
-        background-image: url('https://www.lystloc.com/blog/wp-content/uploads/2022/12/ezgif.com-gif-maker-40.webp');
+        background-image: url('https://techdeskindia.com/wp-content/uploads/2021/09/Why-your-business-needs-an-attendance-management-system.jpg');
         background-size: cover;
         padding: 20px;
     }
