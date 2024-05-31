@@ -2,6 +2,39 @@ import streamlit as st
 import random
 import datetime
 
+# Custom CSS for background image and text color
+st.markdown(
+    """
+    <style>
+    .main {
+        background-image: url('OIG1.jpg');
+        background-size: cover;
+        padding: 20px;
+    }
+    .stButton button {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .stTextInput input {
+        border-radius: 5px;
+    }
+    .stSelectbox select {
+        background-color: #f0f2f6;
+        border-radius: 5px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: #00008B;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    p, label {
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    </style>
+    """, unsafe_allow_html=True
+)
+
+
 # List of students
 if 'people' not in st.session_state:
     st.session_state.people = {
@@ -33,7 +66,6 @@ if 'people' not in st.session_state:
             "SOMA PRAMANIK", "KRISHNAGOPAL JAY", "SUKANYA KHAN", "RITAM KOLEY", "SUBHAJIT MAITY", "SOUMYADIP DHARA", "PRANAB SAMANTA", "Jyoti Mondal", "SUDIP MAITY",
             "Sumana Samanta", "SRIZONI MAITY", "BAISHAKHI SING", "BAISHIK PODDAR", "MANAN MAITY", "SK MAMNUR ISLAM", "ADRIJA SINHA", "JAHARLAL BARUI", "SUDIPTA KHAN",
             "Anwesha Das", "TUFAN BERA", "ANIMESH MAHANTY", "DEBRAJ PAUL", "SAPTADEEP HALDER", "ANKITA BERA", "Harsha Guchhait", "HAREKRISHNA ADHIKARY", "SUPRIO ADHIKARI"
-
         ]
     }
 
@@ -46,7 +78,7 @@ def generate_otp():
 
 # Streamlit UI for login page
 def login_page():
-    st.title('TNU_ATTENDANCE - Login')
+    st.title('🔐 TNU_ATTENDANCE - Login')
 
     # Login form
     name = st.text_input('Name')
@@ -54,16 +86,20 @@ def login_page():
     otp = st.text_input('Enter OTP', type='password')
 
     # Button to generate OTP
-    if st.button('Send OTP'):
+    if st.button('📧 Send OTP'):
         otp_value = generate_otp()
         st.session_state.sent_otp = otp_value  # Store OTP in session for feedback
         st.session_state.email = email  # Store email in session
         st.session_state.name = name  # Store name in session
         registered_users[email] = otp_value  # Store OTP for verification
-        st.write(f"OTP sent to {email}: {otp_value}")
+        st.session_state.otp_sent = True  # Flag to indicate OTP was sent
+
+    # Show OTP if it was sent
+    if st.session_state.get('otp_sent'):
+        st.info(f"OTP sent to {st.session_state.email}: {st.session_state.sent_otp}")
 
     # Button to log in
-    if st.button('Log In'):
+    if st.button('🔓 Log In'):
         stored_otp = st.session_state.get('sent_otp')
         stored_email = st.session_state.get('email')
         stored_name = st.session_state.get('name')
@@ -79,10 +115,9 @@ def login_page():
         else:
             st.error('Invalid email or OTP')
 
-
 # Streamlit UI for shortlist page
 def shortlist_page():
-    st.title('TNU_ATT - Shortlist')
+    st.title('📋 TNU_ATT - Shortlist')
 
     # Short List form
     school = st.selectbox('School', ['NONE', 'SCHOOL OF SCIENCE AND TECHNOLOGY'], key='school')
@@ -91,7 +126,7 @@ def shortlist_page():
 
     # Add new student
     new_student = st.text_input('Add new student')
-    if st.button('Add Student'):
+    if st.button('➕ Add     student'):
         if new_student:
             key = f'{department} {semester}'
             if key in st.session_state.people:
@@ -102,7 +137,7 @@ def shortlist_page():
     
     # Buttons to reset or proceed
     col1, col2 = st.columns([1, 2])
-    if col1.button('RESET'):
+    if col1.button('🔄 RESET'):
         # Clear specific keys in session state and rerun the app
         del st.session_state['school']
         del st.session_state['department']
@@ -111,8 +146,8 @@ def shortlist_page():
 
     key = f'{department} {semester}'
     if key in st.session_state.people:
-        st.subheader('List of People')
-        if st.button('Mark All Present'):
+        st.subheader('📜 List of People')
+        if st.button('🗹 Mark All Present'):
             for person in st.session_state.people[key]:
                 st.session_state[f"checkbox_{person}"] = True
 
@@ -120,23 +155,23 @@ def shortlist_page():
             checkbox_key = f"checkbox_{person}"
             st.checkbox(person, key=checkbox_key)
         
-        if st.button('SAVE'):
+        if st.button('💾 SAVE'):
             attendances_to_save = [(person, datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')) for person in st.session_state.people[key] if st.session_state.get(f"checkbox_{person}")]
             if st.session_state.username not in st.session_state.saved_attendances:
                 st.session_state.saved_attendances[st.session_state.username] = []
             st.session_state.saved_attendances[st.session_state.username].append(attendances_to_save)
             st.success('Attendances saved successfully!')
 
-        st.sidebar.button('Saved Attendances', on_click=saved_attendances_page)
+        st.sidebar.button('📂 Saved Attendances', on_click=saved_attendances_page)
         
     # Button to go back to login page
-    if st.button('Logout'):
+    if st.button('🔙 Logout'):
         st.session_state.logged_in = False
         st.rerun()
 
 # Function to display saved shortlisted candidates
 def saved_attendances_page():
-    st.title('Saved Attendances')
+    st.title('📂 Saved Attendances')
     username = st.session_state.username
     saved_attendances = st.session_state.saved_attendances.get(username, [])
     if saved_attendances:
