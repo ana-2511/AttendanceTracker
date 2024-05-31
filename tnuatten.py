@@ -7,7 +7,7 @@ st.markdown(
     """
     <style>
     .main {
-        background-image: url('https://wpschoolpress.com/wp-content/uploads/2023/05/Attendance-Management-System.png');
+        background-image: url('https://www.lystloc.com/blog/wp-content/uploads/2022/12/ezgif.com-gif-maker-40.webp');
         background-size: cover;
         padding: 20px;
     }
