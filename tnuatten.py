@@ -27,9 +27,9 @@ st.markdown(
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
     p, label {
-        color: white;
+        color: purple;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        font-weight: bold;
+        font-weight: italics;
         font-size: 20px;
 
     }
