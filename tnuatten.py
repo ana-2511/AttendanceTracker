@@ -7,7 +7,7 @@ st.markdown(
     """
     <style>
     .main {
-        background-image: url('https://techdeskindia.com/wp-content/uploads/2021/09/Why-your-business-needs-an-attendance-management-system.jpg');
+        background-image: url('https://blog.darwinbox.com/hubfs/The%20Importance%20of%20an%20Attendance%20System%20Dashboard-%20Simplifying%20HR%20Management.jpg');
         background-size: cover;
         padding: 20px;
     }
