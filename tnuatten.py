@@ -7,7 +7,7 @@ st.markdown(
     """
     <style>
     .main {
-        background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20190221/ourmid/pngtree-sign-in-check-in-annual-meeting-attendance-wall-image_21644.jpg');
+        background-image: url('https://media.centrist.co.nz/wp-content/uploads/2023/12/22100646/DALL%C2%B7E-2023-12-22-10.06.28-A-cool-stylized-illustration-reminiscent-of-The-Economist-showing-an-empty-classroom.-The-classroom-is-modern-and-well-equipped-but-noticeably-devoi-e1703197184160.jpg.webp');
         background-size: cover;
         padding: 20px;
     }
