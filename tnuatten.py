@@ -27,7 +27,7 @@ st.markdown(
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
     p, label {
-        color: deep pink;
+        color: pink;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         font-weight: bold;
         font-size: 20px;
