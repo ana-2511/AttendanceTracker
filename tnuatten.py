@@ -7,7 +7,7 @@ st.markdown(
     """
     <style>
     .main {
-        background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20190221/ourmid/pngtree-sign-in-check-in-attendance-wall-annual-meeting-background-image_22055.jpg');
+        background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20190221/ourmid/pngtree-sign-in-check-in-annual-meeting-attendance-wall-image_21644.jpg');
         background-size: cover;
         padding: 20px;
     }
